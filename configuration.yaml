@@ -1,0 +1,35 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+pi_hole:
+  host: localhost:4865
+  api_key: ""
+
+homeassistant:
+  name: Home
+  unit_system: metric
+  time_zone: Australia/Brisbane
+
+panel_iframe:
+  nas:
+    title: 'NAS'
+    url: 'http://192.168.1.160:5000'
+    icon: 'mdi:amazon-drive'
+  transmission:
+    title: 'Transmission'
+    url: 'http://192.168.1.160:9091'
+    icon: 'mdi:progress-download'
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
