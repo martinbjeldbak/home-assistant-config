@@ -10,14 +10,32 @@ default_config:
 tts:
   - platform: google_translate
 
-pi_hole:
-  host: localhost:4865
-  api_key: ""
-
 homeassistant:
   name: Home
   unit_system: metric
   time_zone: Australia/Brisbane
+
+device_tracker:
+  - platform: netgear
+    password: !secret routerpassword
+
+# calendar:
+#   - platform: caldav
+#     username: !secret caldavusername
+#     password: !secret caldavpassword
+#     url: https://cloud.martinbjeldbak.com/remote.php/dav
+ 
+light:
+  - platform: group
+    name: Living Room
+    entities:
+      - light.living_room
+      - light.hue_lightstrip
+  - platform: group
+    name: Bedroom
+    entities:
+      - light.martin_s_side
+      - light.nandar_s_side
 
 panel_iframe:
   nas:
@@ -28,6 +46,10 @@ panel_iframe:
     title: 'Transmission'
     url: 'http://192.168.1.160:9091'
     icon: 'mdi:progress-download'
+
+spotify:
+  client_id: !secret spotifyclientid
+  client_secret: !secret spotifyclientsecret
 
 group: !include groups.yaml
 automation: !include automations.yaml
