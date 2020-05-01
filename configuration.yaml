@@ -19,12 +19,6 @@ device_tracker:
   - platform: netgear
     password: !secret routerpassword
 
-# calendar:
-#   - platform: caldav
-#     username: !secret caldavusername
-#     password: !secret caldavpassword
-#     url: https://cloud.martinbjeldbak.com/remote.php/dav
- 
 light:
   - platform: group
     name: Living Room
@@ -40,11 +34,11 @@ light:
 panel_iframe:
   nas:
     title: 'NAS'
-    url: 'http://192.168.1.160:5000'
+    url: !secret nasurl
     icon: 'mdi:amazon-drive'
   transmission:
     title: 'Transmission'
-    url: 'http://192.168.1.160:9091'
+    url: !secret transmissionurl
     icon: 'mdi:progress-download'
 
 spotify:
