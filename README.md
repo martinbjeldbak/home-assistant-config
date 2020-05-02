@@ -3,7 +3,7 @@
 
 This repository contains a backup of my Home Assistant configuration.
 
-Home assistant is installed via [hass.io](https://www.home-assistant.io/hassio/) on a Raspberry Pi 4 Model B connected to my home network.
+Home assistant is installed via [hass.io](https://www.home-assistant.io/hassio/) on a Raspberry Pi 3 Model B connected to my home network.
 
 ## Home Assitant Integrations
 
